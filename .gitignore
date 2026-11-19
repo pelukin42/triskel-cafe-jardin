@@ -1,0 +1,8 @@
+.env
+.env.*
+node_modules/
+.netlify/
+.venv/
+venv/
+__pycache__/
+*.log

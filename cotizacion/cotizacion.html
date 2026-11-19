@@ -1,0 +1,276 @@
+<!doctype html>
+<!-- ==========================================================================
+     COTIZACIÓN · formato estándar de Axel Sites (4 páginas A4)
+     Triskel Café y Jardín · CT-01 · 23.09.2026
+     Se exporta a PDF con:
+       msedge --headless=new --disable-gpu --no-pdf-header-footer \
+              --print-to-pdf="Cotizacion-CT01-Triskel.pdf" \
+              "http://localhost:5539/cotizacion/cotizacion.html"
+     ========================================================================== -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Cotización CT-01 · Triskel Café y Jardín</title>
+<link rel="stylesheet" href="fonts-embedded.css">
+<style>
+@page{ size:A4; margin:0 }
+:root{
+  --paper:#F7F7F4; --ink:#15181B; --ink-2:#454B47; --muted:#7A7F79;
+  --line:#CFD2C9; --line-hard:#8B9088;
+  --red:#9E2A1C; --red-wash:#EDE2DF;
+  --slate:#2F4F5C; --slate-wash:#DCE7EB;
+  --f-d:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-b:"Newsreader",Georgia,serif;
+  --f-m:"IBM Plex Mono",Consolas,monospace;
+}
+*{box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+html,body{margin:0;padding:0;background:#8B9088}
+body{font-family:var(--f-b); color:var(--ink); font-size:10pt; line-height:1.5}
+.page{position:relative; width:210mm; height:297mm; background:var(--paper);
+  overflow:hidden; page-break-after:always; break-after:page; margin:0 auto;
+  padding:16mm 17mm 19mm; display:flex; flex-direction:column}
+.page:last-child{page-break-after:auto; break-after:auto}
+.tbstrip{position:absolute; left:17mm; right:17mm; bottom:8mm; border-top:.5pt solid var(--line-hard);
+  padding-top:2.2mm; display:flex; justify-content:space-between; font-family:var(--f-m);
+  font-size:6.2pt; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+.tbstrip .pg{color:var(--ink); font-weight:500}
+.rh{display:flex; justify-content:space-between; border-bottom:.5pt solid var(--line);
+  padding-bottom:2.4mm; margin-bottom:7mm; font-family:var(--f-m); font-size:6.4pt;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--muted)}
+.rh b{font-weight:500; color:var(--ink-2)}
+
+/* ---------- portada ---------- */
+.cover{justify-content:space-between; padding:20mm 17mm 19mm}
+.cv-top{display:flex; justify-content:space-between; align-items:flex-start}
+.cv-logo{height:15mm; width:auto; display:block}
+.cv-ref{font-family:var(--f-m); font-size:6.6pt; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--muted); text-align:right; line-height:1.9}
+.cv-ref b{color:var(--ink); font-weight:500}
+.cv-mid{margin-top:auto}
+.cv-eyebrow{font-family:var(--f-m); font-size:7.2pt; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--red); margin:0 0 6mm}
+.cv-title{font-family:var(--f-d); font-weight:800; font-size:43pt; line-height:.92;
+  letter-spacing:-.035em; margin:0 0 7mm}
+.cv-sub{font-size:14pt; line-height:1.36; font-weight:300; color:var(--ink-2); max-width:122mm; margin:0 0 12mm}
+.cv-sub em{font-style:normal; color:var(--ink); font-weight:400}
+.cv-rule{height:1.6pt; background:var(--ink); margin-bottom:5mm}
+.cv-grid{display:grid; grid-template-columns:repeat(3,1fr); border-top:.5pt solid var(--line)}
+.cv-grid div{padding:3.2mm 4mm 0 0; border-right:.5pt solid var(--line)}
+.cv-grid div:last-child{border-right:0; padding-right:0}
+.cv-grid dt{font-family:var(--f-m); font-size:6.2pt; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 1.5mm}
+.cv-grid dd{margin:0; font-family:var(--f-m); font-size:8pt; line-height:1.45}
+.cv-foot{margin-top:10mm; padding-top:3.5mm; border-top:.5pt solid var(--line);
+  font-family:var(--f-m); font-size:6.8pt; color:var(--muted); line-height:1.8}
+.cv-foot b{color:var(--ink); font-weight:500}
+
+/* ---------- tipografía ---------- */
+h2{font-family:var(--f-d); font-weight:800; font-size:18pt; line-height:1.08;
+  letter-spacing:-.022em; margin:0 0 4mm; text-wrap:balance}
+h3{font-family:var(--f-d); font-weight:600; font-size:11.5pt; line-height:1.25; margin:0 0 2.6mm; letter-spacing:-.01em}
+.eyebrow{font-family:var(--f-m); font-size:6.6pt; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin:0 0 3mm}
+p{margin:0 0 3mm; max-width:152mm}
+.lead{font-size:10.6pt; color:var(--ink-2); line-height:1.5}
+.lead strong{color:var(--ink); font-weight:500}
+strong{font-weight:500}
+.sec{margin-bottom:8mm}
+.tight .sec{margin-bottom:6mm}
+.tight .steps > div{padding:2.2mm 0}
+.tight td{padding:2.4mm 3mm 2.5mm 0}
+.tight tr.tot td{padding-top:2.8mm; padding-bottom:2.8mm}
+.sec:last-child{margin-bottom:0}
+
+/* ---------- cajas ---------- */
+.note{border-left:2pt solid var(--slate); background:#FFF; padding:3.4mm 4.5mm; margin:0}
+.note .tag{display:block; font-family:var(--f-m); font-size:6pt; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--slate); margin-bottom:1.8mm}
+.note p{font-size:9.6pt; line-height:1.48; margin:0; max-width:none}
+.note--alerta{border-left-color:var(--red)}
+.note--alerta .tag{color:var(--red)}
+
+/* ---------- listas ---------- */
+ul.tick{margin:0; padding:0; list-style:none; font-size:9.6pt; line-height:1.46; color:var(--ink-2)}
+ul.tick li{position:relative; padding-left:4.8mm; margin-bottom:2.4mm}
+ul.tick li:last-child{margin-bottom:0}
+ul.tick li::before{content:"—"; position:absolute; left:0; color:var(--line-hard); font-family:var(--f-m); font-size:8pt}
+ul.tick b{color:var(--ink); font-weight:500}
+ul.tick.dos{columns:2; column-gap:9mm}
+ul.tick.dos li{break-inside:avoid}
+
+/* ---------- tablas ---------- */
+table{width:100%; border-collapse:collapse; font-size:9.4pt; margin:0}
+th{font-family:var(--f-m); font-size:6.4pt; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); text-align:left; font-weight:500; padding:0 3mm 2.4mm 0; border-bottom:1pt solid var(--ink)}
+th.r,td.r{text-align:right; padding-right:0}
+td{padding:2.8mm 3mm 3mm 0; border-bottom:.5pt solid var(--line); vertical-align:top; line-height:1.4; color:var(--ink-2)}
+td.it{font-family:var(--f-d); font-weight:600; font-size:9.6pt; color:var(--ink)}
+td.num{font-family:var(--f-m); font-size:9.4pt; color:var(--ink); white-space:nowrap}
+td .sm{display:block; font-family:var(--f-b); font-weight:400; font-size:8.8pt; color:var(--muted); margin-top:.9mm; letter-spacing:0; text-transform:none}
+tr.tot td{border-bottom:1pt solid var(--ink); border-top:.5pt solid var(--ink-2); padding-top:3.2mm; padding-bottom:3.2mm}
+tr.tot td.it{font-family:var(--f-d); font-weight:800; font-size:10.6pt}
+tr.tot td.num{font-family:var(--f-m); font-size:11.5pt; font-weight:500; color:var(--red)}
+tr.sub td{color:var(--muted); font-size:8.6pt}
+tr.sub td.num{color:var(--muted); font-size:8.6pt}
+.tnote{font-family:var(--f-m); font-size:7pt; color:var(--muted); line-height:1.65; margin:3mm 0 0; max-width:none}
+
+/* ---------- pasos ---------- */
+.steps{border-top:1pt solid var(--ink)}
+.steps > div{display:grid; grid-template-columns:26mm 1fr; gap:0 5mm; padding:2.8mm 0; border-bottom:.5pt solid var(--line); align-items:baseline}
+.steps .w{font-family:var(--f-m); font-size:7.6pt; letter-spacing:.06em; text-transform:uppercase; color:var(--red)}
+.steps b{font-family:var(--f-d); font-weight:600; font-size:9.6pt}
+.steps span{font-size:9.2pt; color:var(--ink-2)}
+
+/* ---------- cierre ---------- */
+.close{margin-top:auto; border-top:1.6pt solid var(--ink); padding-top:5mm}
+.close h3{font-size:13pt; font-weight:800; letter-spacing:-.02em; margin-bottom:2.6mm}
+.close p{font-size:9.8pt; color:var(--ink-2); margin-bottom:3.4mm; max-width:none}
+.close .sign{display:grid; grid-template-columns:1fr 1fr 1fr; gap:0 5mm; border-top:.5pt solid var(--line); padding-top:3.2mm;
+  font-family:var(--f-m); font-size:7.2pt; line-height:1.7; color:var(--ink-2)}
+.close .sign b{display:block; font-size:6.2pt; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:1.4mm; font-weight:500}
+</style>
+</head>
+<body>
+
+<!-- ============ 1 · PORTADA ============ -->
+<section class="page cover">
+  <div class="cv-top">
+    <img class="cv-logo" src="logo-axelsites.png" alt="AxelSites">
+    <div class="cv-ref">
+      Cotización <b>CT-01</b><br>
+      Triskel Café y Jardín<br>
+      23.09.2026<br>
+      Vigencia: 23.10.2026
+    </div>
+  </div>
+
+  <div class="cv-mid">
+    <p class="cv-eyebrow">Propuesta · Sitio web</p>
+    <h1 class="cv-title">Tu jardín,<br>con sitio propio</h1>
+    <p class="cv-sub">Hoy Triskel solo existe en Instagram: <em>un sitio propio que reserva, cotiza eventos y vende por WhatsApp</em>, ya construido para esta reunión.</p>
+    <div class="cv-rule"></div>
+    <dl class="cv-grid">
+      <div><dt>Inversión</dt><dd>$915,30<br>IVA incluido</dd></div>
+      <div><dt>Mensualidad</dt><dd>$0 al mes<br>Sin permanencia</dd></div>
+      <div><dt>Estado</dt><dd>Sitio ya construido</dd></div>
+    </dl>
+    <p class="cv-foot">
+      <b>AxelSites</b> · Desarrollo y diseño web · Costa Rica<br>
+      axelsites.com · WhatsApp +506 6316-4765<br>
+      Documento preparado exclusivamente para Triskel. Montos en dólares.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 2 · LA PROPUESTA ============ -->
+<section class="page">
+  <div class="rh"><span>Cotización CT-01 — Triskel</span><b>01 · La propuesta</b></div>
+
+  <div class="sec">
+    <p class="eyebrow">Qué encontramos</p>
+    <h2>Un jardín que ya funciona, sin sitio propio</h2>
+    <p class="lead">Triskel tiene 16 mil seguidores en Instagram, 4,7 estrellas en Google y casi un menú especial
+    por mes desde que abrió en marzo de 2025. Pero el campo "sitio web" de su ficha de Google apunta solo a
+    Instagram: no hay un lugar propio donde reservar, cotizar un evento o ver la carta completa sin hacer scroll
+    por 63 publicaciones.</p>
+    <p class="lead">Construimos ese lugar. Está listo para mostrarse hoy mismo, en <strong>español e inglés</strong>,
+    con todo lo que ya publican integrado en un solo sitio.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Lo que encontramos investigando</h3>
+    <ul class="tick">
+      <li><b>Sin sitio propio: </b>Google e Instagram son hoy los únicos lugares donde alguien puede conocer a Triskel.</li>
+      <li><b>Cero fotos descargables: </b>ni la ficha de Google ni Instagram entregan fotos sin iniciar sesión; hay que pedirlas directo al negocio.</li>
+      <li><b>16 mil seguidores sin una página de aterrizaje: </b>cada publicación nueva se pierde en el feed en vez de sumar a un canal propio de reservas.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>Lo que ya construimos para esta reunión</h3>
+    <p class="lead">El sitio completo —menú, cotizador de eventos, reservas y club— ya está armado y funcionando
+    con la información real que encontramos. La reunión sirve para revisarlo juntos y confirmar los datos marcados
+    como pendientes (ver <em>PENDIENTES-CLIENTE.md</em>), no para empezar desde cero.</p>
+  </div>
+
+  <div class="note note--alerta" style="margin-top:auto">
+    <span class="tag">Hallazgo más urgente</span>
+    <p>Encontramos <strong>tres números de contacto distintos</strong> publicados en 18 meses (dos en la
+    publicación de apertura de Instagram, uno en la ficha actual de Google). Como todos los botones del sitio
+    dependen de un solo WhatsApp, confirmar cuál está vigente es el primer punto de la reunión.</p>
+  </div>
+
+  <div class="tbstrip"><span>Cotización CT-01 — Triskel · AxelSites</span><span class="pg">02 / 04</span></div>
+</section>
+
+<!-- ============ 3 · ALCANCE ============ -->
+<section class="page">
+  <div class="rh"><span>Cotización CT-01 — Triskel</span><b>02 · Alcance</b></div>
+
+  <div class="sec">
+    <p class="eyebrow">Qué se entrega</p>
+    <h2>Un sitio completo, sin dependencias</h2>
+    <p class="lead">Un sitio multipágina, sin dependencias ni mensualidades de plataforma, pensado para que
+    Triskel lo administre por años sin depender de un desarrollador para cada cambio de menú.</p>
+    <ul class="tick">
+      <li><b>Sitio de 6 páginas bilingüe (ES/EN): </b>inicio, menú por sección, club y regalo, reservas y cotizador, página de enlaces para la bio y kit de mostrador.</li>
+      <li><b>Cotizador de eventos en 4 pasos: </b>ocasión, zona, platillos sugeridos y presupuesto, con resumen en vivo y envío directo a WhatsApp.</li>
+      <li><b>Reservas con contexto completo: </b>día, cantidad de personas, horario y platillo de interés, listos en el mensaje de WhatsApp.</li>
+      <li><b>Club Triskel sin costo, paquetes propuestos y tarjeta de regalo: </b>listos para activar cuando Triskel los apruebe.</li>
+      <li><b>SEO local: </b>datos estructurados (JSON-LD), mapa, botones de Waze y enlace directo a reseñas de Google.</li>
+      <li><b>Kit de mostrador impreso con QR</b> (reseña, WhatsApp, Instagram y regalo) y página de enlaces para la bio de Instagram.</li>
+      <li><b>Investigación completa: </b>mercado meta, hallazgos de la ficha de Google y agenda de la reunión, en documentos aparte.</li>
+      <li><b>3 rondas de ajustes</b> después de la entrega.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>Lo que no incluye</h3>
+    <ul class="tick">
+      <li>Fotografía profesional nueva: el sitio usa marcadores hasta que Triskel envíe fotos originales.</li>
+      <li>Pauta pagada (Google Ads, Meta Ads) ni gestión de redes sociales.</li>
+      <li>Panel administrativo o base de datos editable por Triskel (eso es Plan Personalizado).</li>
+    </ul>
+  </div>
+
+  <div class="note" style="margin-top:auto">
+    <span class="tag">Lo que necesito de ustedes</span>
+    <p>Confirmar el WhatsApp vigente, enviar 8 a 10 fotos del jardín y los platillos, y revisar
+    <em>PENDIENTES-CLIENTE.md</em> punto por punto en la reunión de entrega.</p>
+  </div>
+
+  <div class="tbstrip"><span>Cotización CT-01 — Triskel · AxelSites</span><span class="pg">03 / 04</span></div>
+</section>
+
+<!-- ============ 4 · INVERSIÓN ============ -->
+<section class="page tight">
+  <div class="rh"><span>Cotización CT-01 — Triskel</span><b>03 · Inversión</b></div>
+
+  <div class="sec">
+    <p class="eyebrow">Desglose</p>
+    <h2>Inversión</h2>
+    <table>
+      <tr><th>Concepto</th><th class="r">Monto</th></tr>
+      <tr><td class="it">Sitio web completo — Triskel Café y Jardín<span class="sm">Menú interactivo, cotizador de eventos, reservas por WhatsApp, club, kit de mostrador y bilingüe</span></td><td class="num r">$810,00</td></tr>
+      <tr><td class="it">Subtotal</td><td class="num r">$810,00</td></tr>
+      <tr class="sub"><td>IVA 13%</td><td class="num r">$105,30</td></tr>
+      <tr class="tot"><td class="it">Total · pago único</td><td class="num r">$915,30</td></tr>
+    </table>
+    <p class="tnote">Sin mensualidad ni permanencia mínima. Dominio, hosting y respaldos se coordinan aparte con Triskel.</p>
+  </div>
+
+  <div class="close">
+    <h3>El siguiente paso</h3>
+    <p>Este documento resume lo que ya construimos y lo que falta confirmar. Si aprueban el alcance, agendamos
+    la reunión de entrega con <em>PENDIENTES-CLIENTE.md</em>, confirman el WhatsApp vigente y las fotos, y el
+    sitio queda listo para publicarse.</p>
+    <div class="sign">
+      <div><b>Contacto</b>WhatsApp +506 6316-4765<br>axelsites.com</div>
+      <div><b>Vigencia</b>Hasta el 23 de octubre de 2026<br>Ref. CT-01 · rev. 1</div>
+      <div><b>Aprobado por</b>Nombre y fecha:<br>______________________</div>
+    </div>
+  </div>
+
+  <div class="tbstrip"><span>Cotización CT-01 — Triskel · AxelSites</span><span class="pg">04 / 04</span></div>
+</section>
+
+</body>
+</html>

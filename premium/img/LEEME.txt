@@ -1,0 +1,21 @@
+FOTOGRAFÍAS DEL SITIO — Triskel Café y Jardín
+==============================================
+
+Copiá cada foto con el nombre EXACTO que usa el HTML o NEGOCIO y aparece sola.
+Hoy el sitio no tiene NINGUNA foto propia: Google no muestra fotos públicas sin
+sesión iniciada, e Instagram bloquea la descarga sin sesión (ver PENDIENTES-CLIENTE.md,
+punto 1). Todo corre con el marcador "Fotografía pendiente" hasta que lleguen los
+originales.
+
+Las páginas esperan (reemplazar por fotos del cliente):
+- jardin.jpg (3:4)     foto principal del hero — el jardín
+- mesa.jpg (4:3)       mesa servida en el jardín (chip del hero)
+- fachada.jpg (4:5)    el espacio al aire libre, para "El jardín"
+- platillo.jpg (3:2)   un platillo servido
+- og.jpg (1200x630)    imagen para compartir: herramientas/og.html
+- favicon.svg, apple-touch-icon.png: herramientas/icono.html
+- qr-*.svg: scripts/qr.py del skill
+- servicios/<id>.jpg (16:10): fotos de cada platillo, se declaran en NEGOCIO.servicios
+- galeria/*.jpg: se declaran en NEGOCIO.galeria (hoy vacío: la sección se oculta sola)
+
+Solo fotos del cliente. Nunca bancos de imágenes. Antes y después: no aplica a este rubro.

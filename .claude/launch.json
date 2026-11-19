@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "sitio-triskel",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "5539", "--bind", "127.0.0.1"],
+      "port": 5539
+    }
+  ]
+}
